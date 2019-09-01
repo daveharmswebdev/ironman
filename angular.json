@@ -124,6 +124,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "ironman"
+    }
+  },
+  "defaultProject": "ironman",
+  "cli": {
+    "defaultCollection": "@ngrx/schematics"
+  }
 }
