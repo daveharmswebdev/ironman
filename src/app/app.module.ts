@@ -9,6 +9,8 @@ import { RxjsWayComponent } from './rxjs-way/rxjs-way.component';
 import { NgrxWayComponent } from './ngrx-way/ngrx-way.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { CustomMaterialModule } from './material-module/material-module.module';
+import { IronService } from './services/ironman.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -22,9 +24,10 @@ import { CustomMaterialModule } from './material-module/material-module.module';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     CustomMaterialModule
   ],
-  providers: [],
+  providers: [IronService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
