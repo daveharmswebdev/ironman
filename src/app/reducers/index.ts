@@ -6,16 +6,17 @@ import {
   MetaReducer
 } from '@ngrx/store';
 import { environment } from '../../environments/environment';
+import { IConfigState, configReducer } from '../state/reducers/config.reducer';
 
 export const stateFeatureKey = 'state';
 
-export interface State {
-
+export interface AppState {
+  configState: IConfigState;
 }
 
-export const reducers: ActionReducerMap<State> = {
-
+export const reducers: ActionReducerMap<AppState> = {
+  configState: configReducer
 };
 
 
-export const metaReducers: MetaReducer<State>[] = !environment.production ? [] : [];
+export const metaReducers: MetaReducer<AppState>[] = !environment.production ? [] : [];

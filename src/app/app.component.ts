@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { IronService } from './services/ironman.service';
+import { AppState } from './reducers';
+import { Store } from '@ngrx/store';
+import { FetchConfig } from './state/actions/config.actions';
 
 @Component({
   selector: 'app-root',
@@ -9,14 +11,9 @@ import { IronService } from './services/ironman.service';
 export class AppComponent implements OnInit {
   title = 'ironman';
 
-  constructor(private svc: IronService) {}
+  constructor(private store: Store<AppState>) {}
+
   ngOnInit() {
-    this.svc.getConfig(21).subscribe(val => console.log('from app', val));
-
-    this.svc.getQuicklist().subscribe(console.log);
-
-    this.svc
-      .getUser(100, 'collector')
-      .subscribe(val => console.log('from app: user', val));
+    this.store.dispatch(new FetchConfig(21));
   }
 }
