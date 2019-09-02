@@ -1,11 +1,14 @@
 <mat-toolbar>
   <button mat-button [matMenuTriggerFor]="menu">Menu</button>
   <mat-menu #menu="matMenu">
+    <button mat-menu-item [routerLink]="['/home']" routerLinkActive="router-link-active" >Home</button>
     <button mat-menu-item [routerLink]="['/subscribe']" routerLinkActive="router-link-active" >Subscribe</button>
     <button mat-menu-item [routerLink]="['/rxjs-way']" routerLinkActive="router-link-active" >Rxjs</button>
     <button mat-menu-item [routerLink]="['/ngrx-way']" routerLinkActive="router-link-active" >NgRx</button>
   </mat-menu>
 </mat-toolbar>
-<h1>I am IronMan</h1>
+<div class="title-bar">
+  <h1>I am IronMan</h1>
+</div>
 
 <router-outlet></router-outlet>

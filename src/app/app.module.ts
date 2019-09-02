@@ -17,6 +17,8 @@ import { reducers, metaReducers } from './reducers';
 import { environment } from 'src/environments/environment';
 import { EffectsModule } from '@ngrx/effects';
 import { ConfigEffects } from './state/Effects/config.effects';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,8 @@ import { ConfigEffects } from './state/Effects/config.effects';
     SubscribeComponent,
     RxjsWayComponent,
     NgrxWayComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +37,9 @@ import { ConfigEffects } from './state/Effects/config.effects';
     CustomMaterialModule,
     StoreModule.forRoot(reducers, { metaReducers }),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
-    EffectsModule.forRoot([ConfigEffects])
+    EffectsModule.forRoot([ConfigEffects]),
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [IronService],
   bootstrap: [AppComponent]

@@ -1,0 +1,19 @@
+.comic-form {
+  .selectors {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+  }
+  .buttons {
+    width: 50%;
+    margin: 2rem auto;
+    display: flex;
+    justify-content: space-around;  
+  }
+}
+
+.price {
+  width: 16rem;
+  margin: 0 auto;
+  text-align: center;
+}

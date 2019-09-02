@@ -7,6 +7,7 @@ export interface IConfig {
 export interface IQuickList {
   id: number;
   value: string;
+  configId: number;
 }
 
 export interface IUser {
