@@ -16,7 +16,6 @@ import { switchMap } from 'rxjs/operators';
 export class RxjsWayComponent implements OnInit {
   public comicForm: FormGroup;
 
-  private localId: number;
   public price: number = null;
 
   private id$: Observable<number>;

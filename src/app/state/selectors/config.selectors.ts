@@ -2,22 +2,22 @@ import { createSelector, createFeatureSelector } from '@ngrx/store';
 import * as fromConfig from '../reducers/config.reducer';
 import { AppState } from 'src/app/reducers';
 
-export const selectAuthState = createFeatureSelector<
+export const selectConfigState = createFeatureSelector<
   AppState,
   fromConfig.IConfigState
 >('configState');
 
 export const selectId = createSelector(
-  selectAuthState,
+  selectConfigState,
   fromConfig.getId
 );
 
 export const selectRegion = createSelector(
-  selectAuthState,
+  selectConfigState,
   fromConfig.getRegion
 );
 
 export const selectRole = createSelector(
-  selectAuthState,
+  selectConfigState,
   fromConfig.getRole
 );

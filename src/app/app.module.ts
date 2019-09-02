@@ -19,6 +19,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { ConfigEffects } from './state/Effects/config.effects';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
+import { ComicEffects } from './state/Effects/comic.effects';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,7 @@ import { HomeComponent } from './home/home.component';
     CustomMaterialModule,
     StoreModule.forRoot(reducers, { metaReducers }),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
-    EffectsModule.forRoot([ConfigEffects]),
+    EffectsModule.forRoot([ConfigEffects, ComicEffects]),
     FormsModule,
     ReactiveFormsModule
   ],
